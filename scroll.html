@@ -1,0 +1,13 @@
+<script type="text/javascript">
+    $(function(){
+        $(window).scroll(function(){
+		    var scrollTop = Math.ceil($(this).scrollTop());
+		    if(scrollTop <= 765){
+			    $("#nav-hidden").fadeOut().removeClass('sticky');
+			}
+			else{
+				$("#nav-hidden").fadeIn().addClass('sticky');
+			}
+		})
+	})
+</script>
