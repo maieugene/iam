@@ -1,0 +1,48 @@
+<script type="text/javascript">
+    $(function(){
+        // plus 
+        $(".plus").click(function(){
+            var count = $("input[type=text]").val();
+            count = Number(count) + 1;
+            $("input[type=text]").val(count);
+
+            var price_1 = Number($("price").html());
+            var count_1 = Number($("input[type=text]").val());
+                        
+            var total = (price_1 * count_1);
+            $("#total").html(total);
+        })
+        // minus
+        $(".minus").click(function(){
+            var count = $("input[type=text]").val();
+            if(count == 0) {
+                return;
+            }
+
+            count = Number(count) - 1;
+            $("input[type=text]").val(count);
+
+            var price_1 = Number($("price").html());
+            var count_1 = Number($("input[type=text]").val());
+
+            var total = (price_1 * count_1);
+            $("#total").html(total);
+        })
+    })
+</script>
+
+<div> 
+    <div>
+        <span class="price">31000</span>
+        <div>
+            <input type="button" class="minus" value="-" />
+            <input type="text" value="0" />
+            <input type="button" class="plus" value="+" />
+        </div>
+        <div class="total">
+            <span>합계</span>
+            <span id="total" style="color: #f43142;">0</span>
+            <span>원</span>
+        </div>
+    </div>
+<div>
