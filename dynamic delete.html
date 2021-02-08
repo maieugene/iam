@@ -1,0 +1,37 @@
+<script type="text/javascript">
+    $(function(){
+        $("#saveBtn").click(function(){
+            var val = $("#inputTxt").val();
+            var template = '<li>' + 
+                                val + 
+                                '<input type="button" class="modify" value="수정" />' +
+                                '<input type="button" class="delete" value="삭제" onclick="delete_review( this );"/>' +
+                            '</li>'
+            $("#review_list > ul").prepend(template);
+            $("#inputTxt").val("").focus();
+        })
+    })
+    function delete_review( obj ){
+        $( $(obj).parent() ).remove();
+    }
+</script>
+
+<body>
+    <h2 class="review_title">리뷰</h2>
+    <input type="text" id="inputTxt" />
+    <input type="button" id="saveBtn" value="내용등록" />
+    <div id="review_list">
+        <ul>
+            <li>
+                test1
+                <input type="button" class="modify" value="수정" />
+                <input type="button" class="delete" value="삭제" / onclick="delete_review( this );">
+            </li>
+            <li>
+                test2
+                <input type="button" class="modify" value="수정" />
+                <input type="button" class="delete" value="삭제" / onclick="delete_review( this );">
+            </li>
+        </ul>
+    </div>
+</body>
