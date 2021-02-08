@@ -1,0 +1,50 @@
+<script type="text/javascript">
+    $(function(){
+        $(".offset_btn").click(function(e){
+            e.preventDefault() 
+            var index = $(".offset_btn").index(this);
+            var scrollPosition = 935;
+            // var scrollTop = Math.ceil($(this).scrollTop());
+                    
+            if(index > 0) {
+                var os = $(".w3-container").eq(index).offset();
+                scrollPosition = os.top;
+                // top:0 , index-1
+                        
+            }
+            $('html,body').animate({
+                scrollTop : scrollPosition
+            }, 400);
+        })
+    })
+</script>
+
+<body>
+    <!-- nav -->
+    <div >
+        <ul>
+            <li>
+                <a class="offset_btn" href="#">1</a>
+            </li>
+            <li>
+                <a class="offset_btn" href="#">2</a>
+            </li>
+            <li>
+                <a class="offset_btn" href="#">3</a>
+            </li>
+            <li>
+                <a class="offset_btn" href="#">4</a>
+            </li>
+        </ul>
+    </div>
+    <!-- container -->
+    <div class="w3-container">
+        test1
+    </div>
+    <div class="w3-container">
+        test2
+    </div>
+    <div class="w3-container">
+        test3
+    </div>
+</body>
