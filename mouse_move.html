@@ -1,0 +1,36 @@
+<head>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            var flag = false;
+            $(".layout").mousemove(function(e){
+                $('.dragLayout').css("top",e.pageY);
+                $('.dragLayout').css("left",e.pageX);
+            })
+        })
+    </script>
+    <style type="text/css">
+        .dragLayout  {
+            position: relative;
+            top: 50%;
+            left: 50%;
+            width: 120px;
+            height: 120px;
+
+            background-color: coral;  
+            margin:-60px 0 0 -60px;
+        }
+
+        .layout {
+            width: 200px;
+            height:200px;
+            overflow: hidden;
+            border : 1px solid #000;
+        }
+    </style>
+</head>
+<body>
+	<div class="layout">
+		<div class="dragLayout"></div>
+	</div>
+</body>
+</html>
