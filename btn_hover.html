@@ -1,0 +1,29 @@
+<script type="text/javascript">
+    $(function () {
+        $(".btn").hover(function () {
+            var index = $(".btn").index(this)
+            $(".hide_text").hide()
+            $(".hide_text").eq(index).fadeIn()
+        }, function () {
+            $(".hide_text").fadeOut()
+        })
+    })
+</script>
+<div>
+    <div>
+        <a class="btn"> 1 </a>
+    </div>
+    <p class="hide_text">text1</p>
+</div>
+<div>
+    <div>
+        <a class="btn"> 2 </a>
+    </div>
+    <p class="hide_text">text2</p>
+</div>
+<div>
+    <div>
+        <a class="btn"> 3 </a>
+    </div>
+    <p class="hide_text">text3</p>
+</div>
